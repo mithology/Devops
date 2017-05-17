@@ -8,7 +8,9 @@
         name: nodejs
       vars:
         node_version: "{{node_version_webserver1}}"
-
+    - name: include nginx
+      include_role:
+        name: nginx
 
 
 - hosts: webserver2

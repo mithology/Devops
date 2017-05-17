@@ -7,4 +7,4 @@
    gpgcheck: no
 
 - name: install node
-  yum: name="nodejs-{{node_version}}" state=latest
+  yum: name="nodejs-{{node_version}}" state=present
