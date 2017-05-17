@@ -7,10 +7,9 @@
       include_role:
         name: nodejs
       vars:
-        node_version: 7.10.0
+        node_version: "{{node_version_webserver1}}"
 
-      include_role:
-        name: nginx
+
 
 - hosts: webserver2
   vars_files:
@@ -21,4 +20,4 @@
     include_role:
       name: nodejs
     vars:
-      node_version: 7.5.0
+      node_version: "{{node_version_webserver2}}"
