@@ -6,6 +6,6 @@
    baseurl: https://rpm.nodesource.com/pub_7.x/el/6/x86_64/
    gpgcheck: no
 
-- name: install node
+- name: install nodejs
   yum: name=nodejs-{{node_version}} state=present
   become: yes
