@@ -6,17 +6,19 @@
     - name: include node
       include_role:
         name: nodejs
+      vars:
+        node_version: 7.10.0
 
-    - name: Install nginx
-      become: yes
-      yum: name="nginx"
-         state=latest
-
+      include_role:
+        name: nginx
 
 - hosts: webserver2
   vars_files:
     - config.yml
   tasks:
   - name: include node
+    become: yes
     include_role:
-      name: nodejs  
+      name: nodejs
+    vars:
+      node_version: 7.5.0

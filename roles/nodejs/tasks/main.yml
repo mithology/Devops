@@ -6,5 +6,5 @@
    baseurl: https://rpm.nodesource.com/pub_7.x/el/6/x86_64/
    gpgcheck: no
 
-- name: Install
-  yum: name="nodejs-7.10.0" state=latest
+- name: install node
+  yum: name="nodejs-{{node_version}}" state=latest
