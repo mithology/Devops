@@ -1,0 +1,22 @@
+---
+- hosts: webserver1
+  vars_files:
+    - config.yml
+  tasks:
+    - name: include node
+      include_role:
+        name: nodejs
+
+    - name: Install nginx
+      become: yes
+      yum: name="nginx"
+         state=latest
+
+
+- hosts: webserver2
+  vars_files:
+    - config.yml
+  tasks:
+  - name: include node
+    include_role:
+      name: nodejs  
