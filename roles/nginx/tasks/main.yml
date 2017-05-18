@@ -1,4 +1,4 @@
-- name : copy nginx configs to 2000
+- name : copy nginx configs to {{nginx_port}}
   become: yes
   template:
     src: nginx.conf
