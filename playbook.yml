@@ -8,6 +8,6 @@
 
   - hosts: webserver2
     vars_files:
-      - config/webserver2.yml
+      - config/ webserver2.yml
     roles:
       - nodejs
