@@ -10,9 +10,9 @@
     dest: /etc/nginx/conf.d/default.conf
   register: nginx_config_changed_result
 
-- name: debug
-  become: yes
-  debug: msg={{nginx_config_changed_result}}
+# - name: debug
+#   become: yes
+#   debug: msg={{nginx_config_changed_result}}
 
 - name: Restart nginx
   become: yes
@@ -25,7 +25,7 @@
 # - shell: cat /etc/nginx/conf.d/default.conf
 #   register: changed_value
 
-- name: start nginx {{nginx_config_changed_result}}
+- name: start nginx
   become: yes
   service:
     name: nginx
