@@ -2,8 +2,19 @@
   - hosts: webserver1
     vars_files:
       - ./configs/webserver1.yml
+      - ./configs/secure_vars.yml
     roles:
       - webserver1
+
+    tasks:
+      - debug:
+          var: sql_password
+
+
+
+# - tasks:
+#   debug:
+#     var: sql_password
 
   - hosts: webserver2
     vars_files:
